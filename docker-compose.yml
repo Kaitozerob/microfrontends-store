@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  catalog:
+    build: ./catalog
+    ports:
+      - '3000:3000'
+    networks:
+      - mfe-network
+
+  profile:
+    build: ./profile
+    ports:
+      - '3001:3001'
+    networks:
+      - mfe-network
+
+  host:
+    build: ./host
+    ports:
+      - '3003:3003'
+    networks:
+      - mfe-network
+
+  cart:
+    build: ./cart
+    ports:
+      - '3004:3004'
+    networks:
+      - mfe-network
+
+networks:
+  mfe-network:
+    driver: bridge

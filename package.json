@@ -1,0 +1,18 @@
+{
+  "name": "microfrontends-store",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "rxjs": "^7.8.2"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "start:all": "npm-run-all --parallel start:catalog start:cart start:host",
+    "start:catalog": "cd catalog && npm install && npm start",
+    "start:cart": "cd cart && npm install && npm start",
+    "start:host": "cd host && npm install && npm start"
+  }
+}
